@@ -71,9 +71,166 @@ body, html {
 }
 .navbar__burger{
     display: none;
+    cursor: pointer;
 }
-
-
+.main{
+    margin-top: 70px;
+}
+.main .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.bold_text{
+    font-size: 48px;
+    font-family: 'Museo Sans Cyrl 700';
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+.main__header{
+    margin-bottom: 50px;
+}
+.main__welcome{
+    margin-bottom: 50px;
+}
+.main__button{
+    width: 276px;
+    height: 76px;
+    background: #00669B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: 'Museo Sans Cyrl 300';
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.main__modal{
+    display: none;
+    transition: all 0.3s ease 0s;
+}
+.main__modal.active{
+    display: block;
+}
+.main__modal_blur{
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main__modal_blur{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow:hidden;
+    top:0px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.main__modal_block{
+    transition: all 1s ease 0s;
+    position:absolute;
+    z-index: 2;
+    width: 400px;
+    height: 470px;
+    background: rgb(255, 255, 255);
+    margin: 0 auto;
+}
+.close_btn{
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 30px;
+    z-index: 10;
+    cursor: pointer;
+}
+.close_btn:after, .close_btn:before{
+    content: '';
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+}
+.close_btn:after{
+    transform: rotate(45deg);
+    top: 13.5px;
+}
+.close_btn:before{
+    transform: rotate(-45deg);
+    bottom: 13.5px;
+}
+.main__modal_block_header{
+    display: flex;
+    justify-content: flex-end;
+    width: 350px;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+.modal_wrapper{
+    width: 350px;
+    margin: 0 auto;
+}
+.log_in{
+    font-family: 'Museo Sans Cyrl 500';
+    font-size: 27px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 70px;
+}
+input[type="text"]{
+    width: 330px;
+    height: 50px;
+    border: #00669B 1px solid;
+    font-family: 'Museo Sans Cyrl 300';
+    padding-left: 20px;
+    font-size: 20px;
+}
+input[type="password"]{
+    width: 330px;
+    height: 50px;
+    border: #00669B 1px solid; 
+    padding-left: 20px;
+    font-size: 20px;
+    font-family: 'Museo Sans Cyrl 300';
+}
+input[type="submit"]{
+    width: 200px;
+    height: 55px;
+    background: #00669B;
+    color: white;
+    font-family: 'Museo Sans Cyrl 300';
+    text-transform: uppercase;
+    border: none; 
+    outline: none;
+}
+input{
+    margin-top: 40px;
+}
+.log_in__form{
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.password-control {
+	position: absolute;
+	top: 150px;
+	right: 10px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(/photos/eye.svg) 0 0 no-repeat;
+}
+.password-control.view {
+	background: url(/photos/eye-off.svg) 0 0 no-repeat;
+}
 @media(max-width:1120px){
     .wrapper{
         width: 960px;
@@ -103,9 +260,16 @@ body, html {
     .navbar__items{
         width: 300px;
     }
+    .bold_text{
+        font-size: 38px;
+    }
 }
+
 @media(max-width:768px){
     body {overflow: hidden;}
+    .main__modal{
+        z-index: 50;
+    }
     .navbar{
         justify-content: space-between;
         align-items: center;
@@ -185,6 +349,29 @@ body, html {
         top:0;
         padding-top: 200px;
     }
+    .bold_text{
+        font-size: 32px;
+    }
+    .main__modal_block{
+        width: 100%;
+        height: 100%;
+    }
+    .modal_wrapper{
+        width: 550px;
+        margin: 0 auto;
+    }
+    
+    input[type="text"]{
+        width: 550px;
+        height: 50px;
+    }
+    input[type="password"]{
+        width: 550px;
+        height: 50px;
+    }
+    .main__modal_block_header{
+        width: 100%;
+    }
 }
 @media(max-width:668px){
     .header{
@@ -194,8 +381,26 @@ body, html {
         width: 400px;
         margin: 0 auto;
     }
+    .modal_wrapper{
+        width: 400px;
+    }
+    input[type="text"]{
+        width: 350px;
+        height: 50px;
+    }
+    input[type="password"]{
+        width: 350px;
+        height: 50px;
+    }
+    .password-control {
+        position: absolute;
+        right: 25px;
+    }
 }
 @media(max-width:458px){
+    .log_in{
+        margin-top: 150px;
+    }
     .wrapper{
         width: 300px;
         margin: 0 auto;
@@ -204,10 +409,84 @@ body, html {
         width: 130px;
         margin-top: 5px;
     }
+    .bold_text{
+        font-size: 24px;
+    }
+    .main__button{
+        width: 256px;
+        height: 66px;
+        font-size: 20px;
+    }
+    .modal_wrapper{
+        width: 250px;
+    }
+    input[type="text"]{
+        width: 250px;
+        height: 40px;
+    }
+    input[type="password"]{
+        width: 250px;
+        height: 40px;
+    }
+    input[type="submit"]{
+        width: 150px;
+        height: 35px;
+        font-size: 14px;
+    }
+    input{
+        margin-top: 30px;
+    }
+    .password-control {
+        position: absolute;
+        top: 115px;
+        right: 2px;
+    }
 }
 @media(max-width:308px){
+    .password-control {
+        position: absolute;
+        top: 100px;
+        right: 2px;
+    }
     .wrapper{
         width: 200px;
         margin: 0 auto;
     }
+    .modal_wrapper{
+        width: 200px;
+    }
+    input[type="text"]{
+        width: 200px;
+        height: 30px;
+    }
+    input[type="password"]{
+        width: 200px;
+        height: 30px;
+    }
+    .bold_text{
+        font-size: 18px;
+    }
+    .main__button{
+        width: 150px;
+        font-size: 14px;
+        height: 40px;
+    }
+    .main__header{
+        margin-bottom: 50px;
+    }
+    .main__welcome{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .logo img{
+        width: 100px;
+        margin-top: 5px;
+    }
+}
+@media(max-height:500px){
+    .log_in{
+        margin-top: 10px;
+        transition: all 0.2s ease 0s;
+    }
+    
 }

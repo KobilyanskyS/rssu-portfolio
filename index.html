@@ -32,6 +32,33 @@
                 </nav>
             </div>
         </header>
+        <main class="main">
+            <div class="wrapper">
+                <h1 class="main__header bold_text">Портфолио студента Колледжа РГСУ</h1>
+                <div class="main__welcome bold_text">Добро пожаловать!</div>
+                <div class="main__button" onclick="PopUpShow()">Авторизоваться</div>
+            </div>
+            <div class="main__modal">
+                    <div class="main__modal_blur">
+                        <div class="main__modal_block">
+                            <div class="modal_wrapper">
+                                <div class="main__modal_block_header">
+                                    <div class="close_btn" onclick="PopUpHide()">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <p class="log_in">Войти</p>
+                                <form class="log_in__form" action="">
+                                    <input placeholder="ИМЯ ПОЛЬЗОВАТЕЛЯ" type="text">
+                                    <input placeholder="ПАРОЛЬ" id="password-input" type="password"  name="password">
+                                    <a href="#" class="password-control"></a>
+                                    <input type="submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </main>
     </div>
 </div>
 </body>
