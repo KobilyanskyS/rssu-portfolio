@@ -12,8 +12,6 @@
 </head>
 
 <body>
-    <div class="full_bg">
-        <div class="full_bg__blur">
             <header class="header">
                 <div class="wrapper">
                     <div class="logo">
@@ -44,6 +42,7 @@
                     <h1 class="main__header bold_text">Портфолио студента Колледжа РГСУ</h1>
                     <div class="main__welcome bold_text">Добро пожаловать!</div>
                     <div class="main__button" onclick="PopUpShow()">Авторизоваться</div>
+                    <a class="register_link" href="sign_in.php">Зарегистрироваться</a>
                 </div>
                 <div class="main__modal">
                     <div class="main__modal_blur">
@@ -55,18 +54,42 @@
                                     </div>
                                 </div>
                                 <p class="log_in">Войти</p>
-                                <form class="log_in__form" action="index.php" method="post">
-                                    <input placeholder="ИМЯ ПОЛЬЗОВАТЕЛЯ" name="login" type="text">
-                                    <input placeholder="ПАРОЛЬ" id="password-input" type="password" name="password">
+                                <form class="log_in__form" action="auth.php" method="post">
+                                    <input placeholder="ИМЯ ПОЛЬЗОВАТЕЛЯ" name="login" id="login" type="text">
+                                    <input placeholder="ПАРОЛЬ" id="password-input" id="password" type="password" name="password">
                                     <a href="#" class="password-control"></a>
-                                    <input type="submit" name="submit" value="ВОЙТИ" />
+                                    <input type="submit" name="submit" id="submit" value="ВОЙТИ" />
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
-        </div>
-    </div>
+
+
+<script>
+//     $(document).ready(function() {
+//     $('#submit').on('click', function() {
+//         var titleValue = $('#login').val();
+//         var contentValue = $('#password').val();
+
+//         $.ajax({
+//                 method: "POST",
+//                 url: "auth.php",
+//                 data: {
+//                     title: login,
+//                     content: password
+//                 }
+//             })
+//             .done(function() {
+               
+//             });
+//         // $('input.title').val("");
+//         // $('#content').val("");
+//     }
+//     )
+
+// });
+</script>
 </body>
 </html>

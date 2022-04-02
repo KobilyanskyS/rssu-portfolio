@@ -21,7 +21,7 @@
 body, html {
     height: 100%;
   }
-.full_bg{
+/* .full_bg{
     height: 100%;
     background-image: url(/photos/background.jpg);
     background-position: center;
@@ -33,7 +33,7 @@ body, html {
     backdrop-filter: blur(4px); 
     height: 100%;
 	width: 100%;
-}
+} */
 .wrapper{
     width: 1060px;
     margin: 0 auto;
@@ -86,7 +86,7 @@ body, html {
 .bold_text{
     font-size: 48px;
     font-family: 'Museo Sans Cyrl 700';
-    color: white;
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
     text-align: center;
 }
@@ -108,6 +108,16 @@ body, html {
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+}
+.register_link{
+    font-family: 'Museo Sans Cyrl 300';
+    font-size: 22px;
+    color: #00669B;
+    text-decoration: none;
+    margin-top: 15px;
+}
+.register_link:hover{
+    text-decoration: underline;
 }
 .main__modal{
     display: none;
