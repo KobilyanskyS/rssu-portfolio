@@ -28,7 +28,7 @@
                     </a>
                     <div class="navbar__inner_item username"><?echo $_SESSION['login']?></div>
                     <div class="dropdown-content">
-                        <a href="#" class="dropdown-link"><div class="dropdown-block">Редактировать</div></a>
+                        <a href="#" class="dropdown-link"><div class="dropdown-block">Редактировать профиль</div></a>
                         <a href="#" class="dropdown-link"><div class="dropdown-block">Ссылка</div></a>
                         <a href="#" class="dropdown-link"><div class="dropdown-block">Ссылка</div></a>
                         <a href="logout.php" class="dropdown-link"><div class="dropdown-block">Выйти</div></a>
@@ -40,17 +40,36 @@
             </div>
         </div>
     </header>
-    <div class="wrapper">
-    <?php
-    $query = "SELECT login FROM users ORDER BY id DESC";
-    $select_users = mysqli_query($link, $query);
-    while ($user = mysqli_fetch_array($select_users))
-    {
-    ?> 
-    <?php 
-        echo $user ['login'], "<br>";
-        }
-    ?>
+    <div class="main">
+        <div class="wrapper">
+            <div class="profiles">
+            <?php
+                $query = "SELECT login FROM users ORDER BY id DESC";
+                $select_users = mysqli_query($link, $query);
+                while ($user = mysqli_fetch_array($select_users))
+                {
+                ?> 
+                <div class="profile__card">
+                    <div class="profile__info">
+                        <div class="profile__img">
+                            <img src="/photos/default-user-image.png" alt="">
+                        </div>
+                        <div class="profile__description">
+                            <p class="profile__description__name"><? echo $user ['login']; ?></p>
+                            <p class="profile__description__age">21</p>
+                            <p class="profile__description__course">4</p>
+                        </div>
+                    </div>
+                    <div class="profile__education__info">
+                        <p class="profile__education__info__place">Колледж РГСУ</p>
+                        <p class="profile__education__info__spec">Информационные системы (по отраслям)</p>
+                    </div>
+                </div>
+                <?php 
+            }
+        ?>
+            </div>
+        </div>
     </div>
 </body>
 </html>

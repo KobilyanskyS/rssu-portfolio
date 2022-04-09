@@ -70,13 +70,9 @@ body, html {
     width: 153px;
     text-align: left;
     position: fixed;
-    /* display: flex; */
-    /* flex-direction: column; */
     top: 70px;
     visibility: hidden;
     z-index: 5;
-    /* border: 1px #000000 dashed; */
-    /* transition: all 0.3s ease 0s; */
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
     background-color: #ffffff;
 }
@@ -85,8 +81,6 @@ body, html {
     font-size: 14px;
     font-family: 'Museo Sans Cyrl 300';
 }
-
-
 .dropdown-link{
     color: black;
     text-decoration: none;
@@ -94,26 +88,12 @@ body, html {
 .dropdown-link:hover{
     text-decoration: underline;
 }
-/* .dropdown-content {
-    align-items: flex-end;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}*/
 .dropdown-content.show{
     visibility: visible;
 }
 .main{
-    margin-top: 70px;
-}
-.main .wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
+    background-color: beige;
+    padding-top: 20px;
 }
 .user_info{
     display: flex;
@@ -149,7 +129,10 @@ body, html {
 }
 
 @media(max-width:768px){
-    body {overflow: hidden;}
+    .stop-scrolling {
+        height: 100%;
+        overflow: hidden;
+    }
     .main__modal{
         z-index: 50;
     }
@@ -202,36 +185,12 @@ body, html {
     .navbar__burger.active span{
         transform: scale(0);
     }
-    .navbar__items{
-        margin-left: 0;
-        position: fixed;
-        top: -100%;
-        left: 0;
-        min-width: 100%;
-        height: 100%;
-        background: rgb(255, 255, 255);
-        flex-direction: column;
-        justify-content: start;
-        transition: all 0.3s ease 0s;
-    }
-    /* .navbar__item{
-        font-family: 'Museo Sans Cyrl 700';
-        padding-bottom: 20px;
-        font-size: 24px;
-        line-height: 50px;
-    }
-    .navbar__items.active{
-        top:0;
-        padding-top: 200px;
-    } */
     .portfolio__header{
         display: none;
     }
     .dropdown-content{
         font-family: 'Museo Sans Cyrl 700';
-        position: absolute;
-        margin-top: 30%;
-        appearance: none;
+        position: relative;
         box-shadow: 0px 0px 0px 0px;
     }
     .user_info{
@@ -249,12 +208,15 @@ body, html {
     .user_info.active{
         top:0;
     }
+    .dropdown-block{
+        padding: 15px 0px 15px 0px;
+    }
+
     .username{
-        font-family: 'Museo Sans Cyrl 700';
-        margin-bottom: 225px;
+        visibility: hidden;
     }
     .avatar{
-        margin-bottom: 225px;
+        visibility: hidden;
     }
 }
 @media(max-width:668px){

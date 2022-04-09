@@ -3,10 +3,6 @@ $(document).ready(function(){
         $('.navbar__burger, .navbar__items, .user_info').toggleClass('active');
     });
 });
-// $(document).ready(function(){
-//     PopUpHide();
-// });
-
 $(document).ready(function(){
     $('.main__button').click(function(event){
         $('.main__modal, .main__modal_block').addClass('active');
@@ -27,6 +23,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.navbar__burger').click(function(event){
         $('.dropdown-content').toggleClass('show');
+        $('body').toggleClass('stop-scrolling');
     });
 });
 
@@ -45,10 +42,3 @@ $(document).ready(function(){
         }
     )
 });
-
-// function PopUpShow(){
-//     $(".main__modal").show();
-// }
-// function PopUpHide(){
-//     $(".main__modal").hide();
-// }
