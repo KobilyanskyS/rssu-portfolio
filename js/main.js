@@ -1,26 +1,23 @@
 $(document).ready(function(){
+    // Добавляет и убирает класс active у меню-бургера при нажатии на него,
+    // у навигации на странице авторизации
     $('.navbar__burger').click(function(event){
         $('.navbar__burger, .navbar__items, .user_info').toggleClass('active');
     });
-});
-$(document).ready(function(){
+    // Добавляет класс active для модального окна авторизации на странице авторизации
     $('.main__button').click(function(event){
         $('.main__modal, .main__modal_block').addClass('active');
     });
-});
-$(document).ready(function(){
+    // Удаляет класс active у модального окна авторизации на странице авторизации при нажатии на крестик
     $('.close_btn').click(function(event){
         $('.main__modal').removeClass('active');
     });
-});
-
-$(document).ready(function(){
+    // Добавляет и убирает класс show у всплывающего меню на главной странице
     $('.username').click(function(event){
         $('.dropdown-content').toggleClass('show');
     });
-});
-
-$(document).ready(function(){
+    // При нажатии на меню-бургер добавляет и убирает класс show у всплывающего окна
+    // А также добавляет и убирает у body класс stop-scrolling, который убирает скролл, когда меню активно
     $('.navbar__burger').click(function(event){
         $('.dropdown-content').toggleClass('show');
         $('body').toggleClass('stop-scrolling');
@@ -28,6 +25,33 @@ $(document).ready(function(){
 });
 
 
+////// Возможность зафиксировать меню при прокрутке //////
+
+// $(document).on('wheel', function(e){
+// 	if (e.originalEvent.wheelDelta >= 0) {
+// 		$('.header').addClass('fixed');
+//         $('.profiles').addClass('m_top');
+// 	} else {
+// 		$('.header').removeClass('fixed');
+//         $('.profiles').removeClass('m_top');
+// 	}
+// });
+
+// var last;
+// $(document).bind('touchmove', function(e){
+// 	 var current = e.originalEvent.touches[0].clientY;
+// 	 if(current > last){
+//         $('.header').addClass('fixed');
+//         $('.profiles').addClass('m_top');
+// 	 } else if(current < last){
+// 		$('.header').removeClass('fixed');
+//         $('.profiles').removeClass('m_top');
+// 	 }
+// 	 last = current;
+// });
+
+
+// Делает ввод пароля видимым (иконка глаза)
 $(document).ready(function(){
     $('.password-control').click(
         function(event){

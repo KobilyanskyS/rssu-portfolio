@@ -51,9 +51,7 @@
                 ?> 
                 <div class="profile__card">
                     <div class="profile__info">
-                        <div class="profile__img">
-                            <img src="/photos/default-user-image.png" alt="">
-                        </div>
+                        <img class="profile__img" src="/photos/default-user-image.png" alt="">
                         <div class="profile__description">
                             <p class="profile__description__name"><? echo $user ['login']; ?></p>
                             <p class="profile__description__age">21</p>
@@ -61,7 +59,6 @@
                         </div>
                     </div>
                     <div class="profile__education__info">
-                        <p class="profile__education__info__place">Колледж РГСУ</p>
                         <p class="profile__education__info__spec">Информационные системы (по отраслям)</p>
                     </div>
                 </div>

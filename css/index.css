@@ -30,6 +30,7 @@ body, html {
     height: 60px;
     width: 100%;
     padding: 20px 0px 20px 0px;
+    border-bottom: 1px #DDBE65 solid;
 }
 .header_items{
     overflow: hidden;   
@@ -92,7 +93,7 @@ body, html {
     visibility: visible;
 }
 .main{
-    background-color: beige;
+    background-color: rgb(255, 255, 255);
     padding-top: 20px;
 }
 .user_info{
@@ -103,6 +104,52 @@ body, html {
 .user_info.show{
     flex-direction: column;
 }
+
+/* Блок с профилями */
+
+.profile__card{
+    border: 1px #DDBE65 solid;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    /* padding: 20px 0px 0px 20px; */
+}
+.profile__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.profile__description{
+    margin-top: 20px;
+}
+.profile__img{
+    width: 85px;
+    border-radius: 50px;
+    margin: 20px 20px 0px 20px;
+}
+.profile__education__info{
+    margin: 20px 20px 0px 20px;
+}
+.profile__description{
+    font-family: 'Museo Sans Cyrl 300';
+}
+.profile__description__name{
+    margin-bottom: 5px;
+}
+.profile__description__age{
+    margin-bottom: 5px;
+}
+.profile__education__info__spec{
+    font-family: 'Museo Sans Cyrl 300';
+}
+.m_top{
+    margin-top: 100px;
+}
+/* Адаптивные стили */
 @media(max-width:1120px){
     .wrapper{
         width: 960px;
@@ -133,11 +180,11 @@ body, html {
         height: 100%;
         overflow: hidden;
     }
-    .main__modal{
-        z-index: 50;
+    .fixed{
+        position: fixed;
     }
     .wrapper{
-        width: 620px;
+        width: 640px;
         margin: 0 auto;
     }
     .logo_link{
@@ -213,10 +260,10 @@ body, html {
     }
 
     .username{
-        visibility: hidden;
+        display: none;
     }
     .avatar{
-        visibility: hidden;
+        display: none;
     }
 }
 @media(max-width:668px){
@@ -242,6 +289,12 @@ body, html {
     .logo img{
         width: 130px;
         margin-top: 5px;
+    }
+    .profile__education__info__spec{
+        font-size: 13px;
+    }
+    .profile__description{
+        font-size: 13px;
     }
 }
 @media(max-width:308px){
