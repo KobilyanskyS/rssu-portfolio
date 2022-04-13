@@ -28,6 +28,10 @@
                     </a>
                     <div class="navbar__inner_item username"><?echo $_SESSION['login']?></div>
                     <div class="dropdown-content">
+                        <a href="" class="dropdown-link avatar2">
+                            <img src="/photos/default-user-image.png" class="avatar3" alt="avatar">
+                            <div class="dropdown-block"><?echo $_SESSION['login']?></div>
+                        </a>
                         <a href="#" class="dropdown-link"><div class="dropdown-block">Редактировать профиль</div></a>
                         <a href="#" class="dropdown-link"><div class="dropdown-block">Ссылка</div></a>
                         <a href="#" class="dropdown-link"><div class="dropdown-block">Ссылка</div></a>

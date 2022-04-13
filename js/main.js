@@ -55,12 +55,12 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.password-control').click(
         function(event){
-            if ($('#password-input').attr('type') == 'password'){
+            if ($('#password').attr('type') == 'password'){
                 $(this).addClass('view');
-                $('#password-input').attr('type', 'text');
+                $('#password').attr('type', 'text');
             } else {
                 $(this).removeClass('view');
-                $('#password-input').attr('type', 'password');
+                $('#password').attr('type', 'password');
             }
             return false;
         }
